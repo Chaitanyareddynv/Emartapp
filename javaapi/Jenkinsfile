@@ -3,13 +3,13 @@ pipeline {
 	
 	environment {
         registry = "repository.k8sengineers.com/apexrepo/main"
-        registryCredential = 'NexusRepoLogin'
+        registryCredential = 'Nexuslogin'
         cartRegistry = "https://repository.k8sengineers.com"
     }
 	
 	stages {
 	
-	  stage('Build Image') {
+	  stage('Build') {
 	     steps {
 		   
 		     script {
@@ -17,7 +17,6 @@ pipeline {
              }
 
 		 }
-	  
 	  }
 	  
 	  stage('Deploy Image') {
