@@ -9,7 +9,7 @@ pipeline {
 	
 	stages {
 	
-	  stage('Build') {
+	  stage('Build image') {
 	     steps {
 		   
 		     script {
@@ -19,12 +19,12 @@ pipeline {
 		 }
 	  }
 	  
-	  stage('Deploy Image') {
+	  stage('Deploy') {
           steps{
             script {
               docker.withRegistry( cartRegistry, registryCredential ) {
                 dockerImage.push("$BUILD_NUMBER")
-                dockerImage.push('latest entry')
+                dockerImage.push('latest')
               }
             }
           }
