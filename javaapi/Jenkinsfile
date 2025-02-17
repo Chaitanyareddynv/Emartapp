@@ -9,7 +9,7 @@ pipeline {
 	
 	stages {
 	
-	  stage('Build image') {
+	  stage('Build') {
 	     steps {
 		   
 		     script {
@@ -19,7 +19,7 @@ pipeline {
 		 }
 	  }
 	  
-	  stage('Deploy') {
+	  stage('Deployed') {
           steps{
             script {
               docker.withRegistry( cartRegistry, registryCredential ) {
