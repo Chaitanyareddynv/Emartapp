@@ -19,7 +19,7 @@ pipeline {
 		 }
 	  }
 	  
-	  stage('Deployed') {
+	  stage('Deployed imaage') {
           steps{
             script {
               docker.withRegistry( cartRegistry, registryCredential ) {
